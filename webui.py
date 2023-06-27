@@ -399,10 +399,6 @@ def webui():
             inbrowser=cmd_opts.autolaunch and os.getenv('SD_WEBUI_RESTARTING ') != '1',
             prevent_thread_lock=True,
             allowed_paths=cmd_opts.gradio_allowed_path,
-            app_kwargs={
-                "docs_url": "/docs",
-                "redoc_url": "/redoc",
-            },
         )
         if cmd_opts.add_stop_route:
             app.add_route("/_stop", stop_route, methods=["POST"])
